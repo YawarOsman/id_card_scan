@@ -18,6 +18,10 @@ dependencies:
   cupertino_icons: ^1.0.6
   go_router: any
   permission_handler: any
+  firebase_core: any
+  firebase_storage: any
+  cloud_firestore: any
+
 
 dev_dependencies:
   flutter_test:
