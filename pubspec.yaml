@@ -21,6 +21,9 @@ dependencies:
   firebase_core: any
   firebase_storage: any
   cloud_firestore: any
+  uuid: any
+  intl: any
+  cached_network_image: any
 
 
 dev_dependencies:
