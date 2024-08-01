@@ -14,11 +14,15 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Your Cards')),
+      appBar: AppBar(
+        title: const Text('Your Cards'),
+        centerTitle: true,
+        leading: const SizedBox(),
+        leadingWidth: 0,
+      ),
       body: StreamBuilder<List<IdCardModel>>(
         stream: HomeService().getIDCards(),
         builder: (context, snapshot) {
@@ -48,7 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(data.createdAt.customFormat),
+                    Text(data.date.customFormat),
                     const SizedBox(height: 10),
                     ClipRRect(
                       borderRadius: BorderRadius.circular(10),
@@ -72,10 +76,9 @@ class _HomeScreenState extends State<HomeScreen> {
   FloatingActionButton _floatingActionButton(BuildContext context) {
     return FloatingActionButton(
       onPressed: () {
-         context.push(Routes.upload);
+        context.push(Routes.upload);
       },
       child: const Icon(Icons.add),
     );
   }
-
 }

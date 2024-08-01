@@ -1,6 +1,10 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:id_card_scan/routes/route_constants.dart';
+import 'package:provider/provider.dart';
 import '../../../main.dart';
+import '../home_provider.dart';
 
 class UploadIdScreen extends StatefulWidget {
   const UploadIdScreen({super.key});
@@ -28,6 +32,9 @@ class _UploadIdScreenState extends State<UploadIdScreen> {
       return const SizedBox();
     }
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Upload ID'),
+      ),
       body: LayoutBuilder(builder: (context, constraints) {
         // get current orientation
         final orientation = MediaQuery.of(context).orientation;
@@ -39,9 +46,7 @@ class _UploadIdScreenState extends State<UploadIdScreen> {
         final cardWidth = cardWidthTemp > 600 ? 600.0 : cardWidthTemp;
         final cardHeight = cardWidth / 1.586;
 
-        return SizedBox(
-          height: constraints.maxHeight,
-          width: constraints.maxWidth,
+        return Center(
           child: CameraPreview(
             _cameraController,
             child: Padding(
@@ -63,15 +68,23 @@ class _UploadIdScreenState extends State<UploadIdScreen> {
                     ),
                   ),
                   const Spacer(),
+                  const SizedBox(width: 20),
                   ElevatedButton(
-                    onPressed: () {
-                      // Capture ID card
-                      // Implement capture logic here
+                    onPressed: () async {
+                      pushRoute() {
+                        context.push(Routes.cropImage);
+                      }
+
+                      final homeProvider = context.read<HomeProvider>();
+                      final xFile = await _cameraController.takePicture();
+                      final image = await xFile.readAsBytes();
+                      homeProvider.setSelectedImage(image);
+                      pushRoute();
                     },
                     style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.symmetric(
                         vertical: 13,
-                        horizontal: 70,
+                        horizontal: 20,
                       ),
                     ),
                     child: const Text('Capture'),

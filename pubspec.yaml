@@ -17,15 +17,16 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6
   go_router: any
-  permission_handler: any
   firebase_core: any
   firebase_storage: any
   cloud_firestore: any
   uuid: any
   intl: any
   cached_network_image: any
-  blinkid_flutter: any
   camera: any
+  image: any
+  provider: any
+  crop_your_image: any
 
 
 dev_dependencies:

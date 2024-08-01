@@ -200,8 +200,8 @@
 				97C146EC1CF9000F007C117D /* Resources */,
 				9705A1C41CF9048500538489 /* Embed Frameworks */,
 				3B06AD1E1E4923F5004D2608 /* Thin Binary */,
-				855AD542A70C1C7985D2B9EE /* [CP] Copy Pods Resources */,
 				22719260C3782B80AB392743 /* [CP] Embed Pods Frameworks */,
+				94E058E44B3D9EE5CE01692F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -307,7 +307,7 @@
 			shellPath = /bin/sh;
 			shellScript = "/bin/sh \"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" embed_and_thin";
 		};
-		855AD542A70C1C7985D2B9EE /* [CP] Copy Pods Resources */ = {
+		94E058E44B3D9EE5CE01692F /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -494,6 +494,7 @@
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
 				DEVELOPMENT_TEAM = 574CK9CBBM;
 				ENABLE_BITCODE = NO;
+				GCC_INPUT_FILETYPE = automatic;
 				INFOPLIST_FILE = Runner/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "ID Scanner";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
@@ -679,6 +680,7 @@
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
 				DEVELOPMENT_TEAM = 574CK9CBBM;
 				ENABLE_BITCODE = NO;
+				GCC_INPUT_FILETYPE = automatic;
 				INFOPLIST_FILE = Runner/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "ID Scanner";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
@@ -704,6 +706,7 @@
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
 				DEVELOPMENT_TEAM = 574CK9CBBM;
 				ENABLE_BITCODE = NO;
+				GCC_INPUT_FILETYPE = automatic;
 				INFOPLIST_FILE = Runner/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "ID Scanner";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";

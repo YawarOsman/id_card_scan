@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:id_card_scan/features/home/view/crop_image.dart';
 import 'package:id_card_scan/features/home/view/home_screen.dart';
 import 'package:id_card_scan/features/home/view/upload_id_screen.dart';
 import 'route_constants.dart';
@@ -27,6 +28,14 @@ class AppRouter {
         parentNavigatorKey: _rootNavigatorKey,
         pageBuilder: (context, state) =>
             const NoTransitionPage(child: UploadIdScreen()),
+      ),
+
+      // Crop id card image route
+      GoRoute(
+        path: Routes.cropImage,
+        parentNavigatorKey: _rootNavigatorKey,
+        pageBuilder: (context, state) =>
+            const NoTransitionPage(child: CropImageWidget()),
       ),
     ],
   );

@@ -1,16 +1,12 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-
 class IdCardModel {
   final String id;
   final String imageUrl;
-  final String createdAt;
-
-
+  final String date;
 
   IdCardModel({
     required this.id,
     required this.imageUrl,
-    required this.createdAt,
+    required this.date,
   });
 
   // from json to model
@@ -18,17 +14,7 @@ class IdCardModel {
     return IdCardModel(
       id: json['id'],
       imageUrl: json['imageUrl'],
-      createdAt: json['createdAt'],
-    );
-  }
-
-
-  // from json to model
-  factory IdCardModel.fromFirestore(QueryDocumentSnapshot snapshot) {
-    return IdCardModel(
-      id: snapshot['id'],
-      imageUrl: snapshot['imageUrl'],
-      createdAt: snapshot['createdAt'],
+      date: json['date'],
     );
   }
 }
