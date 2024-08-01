@@ -24,6 +24,8 @@ dependencies:
   uuid: any
   intl: any
   cached_network_image: any
+  blinkid_flutter: any
+  camera: any
 
 
 dev_dependencies:

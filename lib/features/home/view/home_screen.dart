@@ -1,10 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:id_card_scan/features/home/id_card_model.dart';
 import 'package:id_card_scan/utility/date_formter.dart';
-import 'package:uuid/uuid.dart';
-
+import '../../../routes/route_constants.dart';
 import '../home_service.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -15,8 +14,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final CollectionReference _cardsCollection =
-      FirebaseFirestore.instance.collection('cards');
 
   @override
   Widget build(BuildContext context) {
@@ -75,20 +72,10 @@ class _HomeScreenState extends State<HomeScreen> {
   FloatingActionButton _floatingActionButton(BuildContext context) {
     return FloatingActionButton(
       onPressed: () {
-        //  context.push(Routes.upload);
-        _addData();
+         context.push(Routes.upload);
       },
       child: const Icon(Icons.add),
     );
   }
 
-  final uuid = const Uuid().v4();
-  void _addData() async {
-    await _cardsCollection.add({
-      'id': uuid,
-      'createdAt': DateTime.now().toIso8601String(),
-      'imageUrl':
-          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKffPiIFHuzrbgSD1F871ubB7P2ngB0-magw&s',
-    });
-  }
 }
